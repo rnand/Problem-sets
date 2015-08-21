@@ -1,6 +1,6 @@
-*The Problem*
+**The Problem**
 
-**n** number of people are standing in a circle. **n** is the input read from the user.
+*n* number of people are standing in a circle. *n* is the input read from the user.
 
 The first person has a sword that he uses to kill the second person.
 
@@ -14,10 +14,10 @@ The fifth person kills the sixth and transfers the sword to seventh and so on.
 
 The goal is to find the position of the last man standing with the sword.
 
-*Input*
+**Input**
 
 The number of people.
 
-*Output*
+**Output**
 
 The position of the last man standing.
