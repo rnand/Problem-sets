@@ -5,6 +5,7 @@
 void main()
 {
 	int qsize,*aliveq,i,deadcount=0,j;
+
 	system("cls");
 	printf("\nEnter the number of people:");
 	scanf("%d",&qsize);
@@ -24,21 +25,48 @@ void main()
 			deadcount++;
 			printf("\nDeadcount=%d\n",deadcount );
 			printf("\nAliveq:\n");
+			
 			for(j=0;j<qsize;j++)
 			{
 		
 				printf("\t%d",*(aliveq+j) ); //debug display
 			}
-			
+			i=next_swordman(qsize,aliveq,i);
+			printf("\n\n===============\ni=%d\n\n==============\n",i);
+			// if(i<qsize)
+			// {
+			// 	i++;
+			// }
+			// else
+			// {
+			// 	i=0;
+			// }
 		}
-		if(i<=qsize)
+
+	}
+	getch();
+
+	
+}
+
+int next_swordman(int qsize,int *aq,int cur)
+{
+	
+	while(1)
+	{
+		if(cur>=qsize)
 		{
-			i++;
+			cur=0;
+		}
+		if(*(aq+cur+2)==1)
+		{
+			return cur;
+
 		}
 		else
 		{
-			i=0;
+			cur++;
 		}
 	}
-	getch();
+
 }
