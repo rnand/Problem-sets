@@ -5,7 +5,7 @@
 void main()
 {
 	int qsize,*aliveq,i,deadcount=0,j;
-	//clrscr();
+	system("cls");
 	printf("\nEnter the number of people:");
 	scanf("%d",&qsize);
 	aliveq=(int*)malloc(qsize*sizeof(int));
