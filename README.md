@@ -2,6 +2,6 @@ These are some of the problems that I think every programmer (especially game pr
 
 I was asked some of these questions during job interviews.
 
-*Index*
+**Index**
 
 1. [Last man standing](https://github.com/rnand/Problem-sets/tree/master/Last-man-standing)
