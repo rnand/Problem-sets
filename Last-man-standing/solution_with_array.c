@@ -21,7 +21,7 @@ void main()
 	{
 		
 		*(aliveq+victim)=0;
-		printf("\nPerson %d kills person %d.\n",swordman+1,victim+1 );
+		printf("\n#############################################\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\nPerson %d kills person %d.\n#############################################\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n",swordman+1,victim+1 );
 		deadcount++;
 		printf("\nDeadcount=%d\n",deadcount );
 		printf("\nAliveq:\n");
@@ -32,30 +32,45 @@ void main()
 			printf("\t%d",*(aliveq+j) ); //debug display
 		}
 
-		swordman=next_swordman(qsize,aliveq,swordman);
+		swordman=next_swordman(qsize,aliveq,swordman,victim);
 		victim=next_victim(qsize,aliveq,victim,swordman);
-		printf("\n\n===============\ni=%d\n\n==============\n",i);
+		printf("\n\n===============\nswordman=%d\n\n==============\n",swordman);
 	
 
 	}
+	printf("\n*****************************************************\nThe number of people dead:%d",deadcount);
+	printf("\n#####################################################\nThe position of the last person alive is:%d",swordman);
 	getch();
 
 	
 }
 
-int next_swordman(int qsize,int *aq,int cur)
+int next_swordman(int qsize,int *aq,int cur,int victim)
 {
-	
+	int i;
 	while(1)
 	{
 		if(cur+1>=qsize)
 		{
-			cur=0;
-			return cur;
+			for(i=0;i<qsize;i++)
+			{
+				if(*(aq+i)==1)
+				{
+					return i;
+				}
+			}
+			
 		}
 		else
 		{
-			return cur+1;
+			for(i=victim+1;i<qsize;i++)
+			{
+				if(*(aq+i)==1)
+				{
+					return i;
+				}
+			}
+			
 		}
 	}
 
@@ -63,11 +78,12 @@ int next_swordman(int qsize,int *aq,int cur)
 
 int next_victim(int qsize,int *aq,int cur,int swordman)
 {
+	int i;
 	while(1)
 	{
 		if(swordman+1>=qsize)
 		{
-			for(int i=0;i<qsize;i++)
+			for(i=0;i<qsize;i++)
 			{
 				if(*(aq+i)==1)
 				{
@@ -77,7 +93,7 @@ int next_victim(int qsize,int *aq,int cur,int swordman)
 		}
 		else
 		{
-			for(int i=swordman;i<qsize;i++)
+			for(i=swordman+1;i<qsize;i++)
 			{
 				if(*(aq+i)==1)
 				{
