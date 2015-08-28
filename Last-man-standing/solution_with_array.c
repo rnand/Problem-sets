@@ -22,7 +22,8 @@ void main()
 	{
 
 		*(aliveq+victim)=0;
-		printf("\n#############################################\n\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n\nPerson %d kills person %d.\n\n",swordman+1,victim+1 );
+		printf("\n======================================================\n");
+		printf("\nPerson %d kills person %d.\n\n",swordman+1,victim+1 );
 		deadcount++;
 		printf("\nDeadcount=%d\n",deadcount );
 		printf("\nqsize-1=%d\n",qsize-1);
@@ -37,11 +38,12 @@ void main()
 		swordman=next_swordman(qsize,aliveq,swordman,victim);
 		victim=next_victim(qsize,aliveq,victim,swordman);
 		//printf("\n\n===============\nswordman=%d\n\n==============\n",swordman);
+		printf("\n======================================================\n");
 
 
 	}
-	printf("\n*****************************************************\nThe number of people dead:%d",deadcount);
-	printf("\n#####################################################\nThe position of the last person alive is:%d",swordman);
+	printf("\nThe number of people dead:%d",deadcount);
+	printf("\nThe position of the last person alive is:%d",swordman);
 	getch();
 
 
