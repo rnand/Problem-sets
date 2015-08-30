@@ -61,7 +61,7 @@ int next_swordman(int qsize,int *aq,int cur,int victim)
 	int i;
 	while(1)
 	{
-		if(victim+1>qsize)
+		if(victim+1>=qsize)
 		{
 			for(i=0;i<qsize;i++)
 			{
