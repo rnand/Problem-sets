@@ -42,17 +42,25 @@ void main()
 int find_det(int **mat,int mat_size)
 {
 	int i,j,k,det=0;
-	for(i=0;i<mat_size;i++)
-	{		
-		for(j=i+1;j<mat_size;j++)
-		{			
-			for(k=0;k<mat_size;k++)
-			{
-				det += mat[i][k] * mat[k][j];
-				det=-det;
-			}
+	if(mat_size>2)
+	{
+		//make recursive call here
+	}
+	else
+	{
+		for(i=0;i<mat_size;i++)
+		{		
+			for(j=i+1;j<mat_size;j++)
+			{			
+				for(k=0;k<mat_size;k++)
+				{
+					det += mat[i][k] * mat[k][j];
+					det=-det;
+				}
 			
+			}
 		}
 	}
+	
 	return abs(det);
 }
