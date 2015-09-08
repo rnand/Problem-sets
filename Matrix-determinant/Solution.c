@@ -54,7 +54,7 @@ int find_det(int **mat,int mat_size)
 			{			
 				for(k=0;k<mat_size;k++)
 				{
-					det += mat[i][k] * mat[k][j];
+					det += mat[i][k] * mat[k][j]; //this is wrong 
 					det=-det;
 					printf("\ni=%d j=%d k=%d\nmat[i][k]=%d * mat[k][j]=%d",i,j,k,mat[i][k],mat[k][j] );
 				}
