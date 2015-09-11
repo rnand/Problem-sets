@@ -11,7 +11,7 @@ void main()
 	matptr=(int**)malloc(n*sizeof(int*));
 	for(i=0;i<n;i++)
 	{
-		matptr[i]=(int*)malloc(n*sizeof(int));
+		matptr[i]=(int*)malloc(n*sizeof(int)); //allocate memory for the 2d array
 	}
 	printf("Enter the elements:\n");
 	for(i=0;i<n;i++)
@@ -44,7 +44,7 @@ int find_det(int **mat,int mat_size)
 	int i,j,k,det=0;
 	if(mat_size>2)
 	{
-		//make recursive call here
+		//make recursive call here, probably need another function
 	}
 	else
 	{
@@ -54,7 +54,7 @@ int find_det(int **mat,int mat_size)
 			{			
 				for(k=0;k<mat_size;k++)
 				{
-					det += mat[i][k] * mat[k][j]; //this is wrong 
+					det += mat[i][k] * mat[k][j]; //this is wrong. fix it
 					det=-det;
 					printf("\ni=%d j=%d k=%d\nmat[i][k]=%d * mat[k][j]=%d",i,j,k,mat[i][k],mat[k][j] );
 				}
